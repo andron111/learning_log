@@ -22,4 +22,8 @@ class Entry(models.Model):
 
     def __str__(self):
         """Возвращает строковое представление модели"""
-        return f"{self.text[:50]}..."
+        if self.text >= self.text[:50]:
+            f"{self.text[:50]}..."
+        else:
+            f"{self.text[:50]}"
+        return f"{self.text}"
